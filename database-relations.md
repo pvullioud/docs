@@ -1054,3 +1054,14 @@ Sometimes you might need to disable deferred binding entirely for a given model,
     }
 
 > **Note:** This will disable deferred binding entirely for any model's you apply this override to.
+
+## Events (only for BelongsToMany relation)
+
+Models fire several events, allowing you to hook into various points in the model's lifecycle. Events allow you to easily execute code each time a specific relation is saved or updated in the database. Events are only working for BelongsToMany relation. They are defined by overriding special methods in the class, the following method overrides are available:
+
+Event | Description
+------------- | -------------
+**relation.afterAttach** | Called after creating a new relation between models.
+**relation.afterDetach** | Called after removing a relation between models.
+**relation.beforeAttach** | Called before creating a new relation between models.
+**relation.beforeAttach** | Called before removing a relation between models.
